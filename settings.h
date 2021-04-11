@@ -1,30 +1,31 @@
 // Network settings
-const char* ssid = "ssid";
-const char* password = "passwd";
-const char* espName = "mqtt2rest";
+String userAgent            = "herz08 - MQTT-Client 2 Rest translate";
+const char* ssid            = "ssid";
+const char* password        = "passwd";
+const char* espName         = "mqtt2rest";
 
 // Endpoint settings
-const char* mqtt_server = "192.168.190.54";
-const char* mqtt_user = "user";
-const char* mqtt_password = "user";
-const char* mqtt_clientId = "mqtt2rest";
+const char* mqtt_server     = "192.168.190.54";
+const char* mqtt_user       = "user";
+const char* mqtt_password   = "user";
+const char* mqtt_clientId   = espName;
 
 // Available Topics
-const char* topic_sub      = "womke4a/WS/+/data";
+const char* topic_sub1      = "womke4a/WS/+/data";
+const char* topic_sub2      = "womke4a/mqtt2rest/Upgrade/#";
+const char* topic_upgrade   = "womke4a/mqtt2rest/Upgrade";
+const char* topic_upg_short = "womke4a/mqtt2rest/Upgrade/short";
+const char* topic_status    = "womke4a/mqtt2rest/status";
 
+// Time settings
 const long utcOffsetInSeconds = 3600;
-
-// Minutes to sleep between updates
-int minutes2sleep = 15;
-
-String userAgent = "herz08 - MQTT-Client 2 Rest translate";
-String clientVer = "0.1";
-
 char daysOfTheWeek[7][12] = {"Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"};
 
-// Rest URL
-String RestURL = "https://kdwmkg2lw8izsck-vh01.adb.eu-frankfurt-1.oraclecloudapps.com/ords/vh/ws/sensor";
+// URLs
+String UpgradeUrlShort      = "http://192.168.******/fw/";
+String RestURL              = "https://kdwmkg2lw8izsck-vh01.adb.eu-frankfurt-1.oraclecloudapps.com/ords/vh/ws/sensor";
 // Fingerprint for URL created via https://www.grc.com/fingerprints.htm
-const uint8_t fingerprint[20] = {0xd3, 0x1e, 0x1b, 0xa4, 0x49, 0xba, 0xa3, 0x75, 0xd6, 0x4f, 0x59, 0xc1, 0x62, 0x99, 0x5b, 0x14, 0x3f, 0xc7, 0x44, 0xee};
+static const char fingerprint[] PROGMEM = "D3:1E:1B:A4:49:BA:A3:75:D6:4F:59:C1:62:99:5B:14:3F:C7:44:EE";
+
 // Auth
-String BasicAuth = "Basic ";
+String BasicAuth = "Basic *******";
